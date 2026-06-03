@@ -28,12 +28,164 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FPrincipal";
+            panel1 = new Panel();
+            panelSidebar = new Panel();
+            lblAjustes = new Label();
+            lblNotificaciones = new Label();
+            lblTareas = new Label();
+            lblDashboard = new Label();
+            panel3 = new Panel();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
+            lblNombrePantalla = new Label();
+            panel1.SuspendLayout();
+            panelSidebar.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(28, 28, 30);
+            panel1.Controls.Add(panelSidebar);
+            panel1.Controls.Add(panel3);
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 900);
+            panel1.TabIndex = 0;
+            // 
+            // panelSidebar
+            // 
+            panelSidebar.Controls.Add(lblAjustes);
+            panelSidebar.Controls.Add(lblNotificaciones);
+            panelSidebar.Controls.Add(lblTareas);
+            panelSidebar.Controls.Add(lblDashboard);
+            panelSidebar.Dock = DockStyle.Fill;
+            panelSidebar.Location = new Point(0, 176);
+            panelSidebar.Name = "panelSidebar";
+            panelSidebar.Size = new Size(250, 724);
+            panelSidebar.TabIndex = 1;
+            // 
+            // lblAjustes
+            // 
+            lblAjustes.AutoSize = true;
+            lblAjustes.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblAjustes.ForeColor = SystemColors.ControlLight;
+            lblAjustes.Location = new Point(25, 179);
+            lblAjustes.Name = "lblAjustes";
+            lblAjustes.Size = new Size(54, 18);
+            lblAjustes.TabIndex = 3;
+            lblAjustes.Tag = "menuItem";
+            lblAjustes.Text = "Ajustes";
+            // 
+            // lblNotificaciones
+            // 
+            lblNotificaciones.AutoSize = true;
+            lblNotificaciones.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNotificaciones.ForeColor = SystemColors.ControlLight;
+            lblNotificaciones.Location = new Point(25, 129);
+            lblNotificaciones.Name = "lblNotificaciones";
+            lblNotificaciones.Size = new Size(95, 18);
+            lblNotificaciones.TabIndex = 2;
+            lblNotificaciones.Tag = "menuItem";
+            lblNotificaciones.Text = "Notificaciones";
+            // 
+            // lblTareas
+            // 
+            lblTareas.AutoSize = true;
+            lblTareas.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTareas.ForeColor = SystemColors.ControlLight;
+            lblTareas.Location = new Point(25, 81);
+            lblTareas.Name = "lblTareas";
+            lblTareas.Size = new Size(71, 18);
+            lblTareas.TabIndex = 1;
+            lblTareas.Tag = "menuItem";
+            lblTareas.Text = "Mis tareas";
+            // 
+            // lblDashboard
+            // 
+            lblDashboard.AutoSize = true;
+            lblDashboard.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDashboard.ForeColor = SystemColors.ControlLight;
+            lblDashboard.Location = new Point(25, 36);
+            lblDashboard.Name = "lblDashboard";
+            lblDashboard.Size = new Size(74, 18);
+            lblDashboard.TabIndex = 0;
+            lblDashboard.Tag = "menuItem";
+            lblDashboard.Text = "Dashboard";
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(pictureBox1);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(250, 176);
+            panel3.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.TaskNotes_lightlogo;
+            pictureBox1.Location = new Point(-20, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(283, 173);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(250, 108);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1350, 792);
+            panel2.TabIndex = 1;
+            // 
+            // lblNombrePantalla
+            // 
+            lblNombrePantalla.AutoSize = true;
+            lblNombrePantalla.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblNombrePantalla.Location = new Point(269, 50);
+            lblNombrePantalla.Name = "lblNombrePantalla";
+            lblNombrePantalla.Size = new Size(155, 21);
+            lblNombrePantalla.TabIndex = 2;
+            lblNombrePantalla.Text = "Nombre de Pantalla.";
+            // 
+            // FPrincipal
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1600, 900);
+            Controls.Add(lblNombrePantalla);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FPrincipal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "FPrincipal";
+            Load += FPrincipal_Load;
+            panel1.ResumeLayout(false);
+            panelSidebar.ResumeLayout(false);
+            panelSidebar.PerformLayout();
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Panel panel1;
+        private Panel panel3;
+        private PictureBox pictureBox1;
+        private Panel panel2;
+        private Panel panelSidebar;
+        private Label lblAjustes;
+        private Label lblVencidas;
+        private Label lblNotificaciones;
+        private Label lblTareas;
+        private Label lblDashboard;
+        private Label lblNombrePantalla;
     }
 }

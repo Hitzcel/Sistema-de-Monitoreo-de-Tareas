@@ -55,5 +55,13 @@ namespace TaskNotes_MonitoreoTareas.Forms
             ClsEstilosUI.BtnImagenNormal(btnOcultar, btnMostrar);
             txtPassword.UseSystemPasswordChar = PasswordPropertyTextAttribute.Yes.Password;
         }
+
+        private void btnEntrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FPrincipal principal = new FPrincipal();
+            principal.ShowDialog();
+            this.Close();
+        }
     }
 }
