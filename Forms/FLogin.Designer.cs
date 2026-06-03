@@ -33,6 +33,8 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel5 = new Panel();
+            btnMostrar = new PictureBox();
+            btnOcultar = new PictureBox();
             lblRecuperar = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -49,6 +51,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)btnMostrar).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btnOcultar).BeginInit();
             panel4.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -99,6 +103,8 @@
             // 
             // panel5
             // 
+            panel5.Controls.Add(btnMostrar);
+            panel5.Controls.Add(btnOcultar);
             panel5.Controls.Add(lblRecuperar);
             panel5.Controls.Add(label5);
             panel5.Controls.Add(label4);
@@ -109,6 +115,28 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(737, 264);
             panel5.TabIndex = 2;
+            // 
+            // btnMostrar
+            // 
+            btnMostrar.Image = Properties.Resources.icons8_visible_24;
+            btnMostrar.Location = new Point(661, 150);
+            btnMostrar.Name = "btnMostrar";
+            btnMostrar.Size = new Size(43, 42);
+            btnMostrar.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnMostrar.TabIndex = 6;
+            btnMostrar.TabStop = false;
+            btnMostrar.Click += btnMostrar_Click;
+            // 
+            // btnOcultar
+            // 
+            btnOcultar.Image = Properties.Resources.icons8_ojo_cerrado_24;
+            btnOcultar.Location = new Point(661, 150);
+            btnOcultar.Name = "btnOcultar";
+            btnOcultar.Size = new Size(43, 42);
+            btnOcultar.SizeMode = PictureBoxSizeMode.CenterImage;
+            btnOcultar.TabIndex = 5;
+            btnOcultar.TabStop = false;
+            btnOcultar.Click += btnOcultar_Click;
             // 
             // lblRecuperar
             // 
@@ -156,7 +184,7 @@
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "contraseña...";
-            txtPassword.Size = new Size(667, 42);
+            txtPassword.Size = new Size(618, 42);
             txtPassword.TabIndex = 2;
             txtPassword.UseSystemPasswordChar = true;
             txtPassword.KeyDown += txtPassword_KeyDown;
@@ -273,6 +301,8 @@
             panel2.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)btnMostrar).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btnOcultar).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel3.ResumeLayout(false);
@@ -300,5 +330,7 @@
         private Button btnEntrar;
         private Label label7;
         private Label lblSalir;
+        private PictureBox btnOcultar;
+        private PictureBox btnMostrar;
     }
 }

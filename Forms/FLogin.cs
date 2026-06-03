@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TaskNotes_MonitoreoTareas.Clases;
 
 namespace TaskNotes_MonitoreoTareas.Forms
 {
@@ -13,6 +14,7 @@ namespace TaskNotes_MonitoreoTareas.Forms
         public FLogin()
         {
             InitializeComponent();
+            btnMostrar.Visible = false;
         }
 
         private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
@@ -40,6 +42,18 @@ namespace TaskNotes_MonitoreoTareas.Forms
         private void lblSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnOcultar_Click(object sender, EventArgs e)
+        {
+            ClsEstilosUI.BtnImagenHover(btnOcultar, btnMostrar);
+            txtPassword.UseSystemPasswordChar = PasswordPropertyTextAttribute.No.Password;
+        }
+
+        private void btnMostrar_Click(object sender, EventArgs e)
+        {
+            ClsEstilosUI.BtnImagenNormal(btnOcultar, btnMostrar);
+            txtPassword.UseSystemPasswordChar = PasswordPropertyTextAttribute.Yes.Password;
         }
     }
 }

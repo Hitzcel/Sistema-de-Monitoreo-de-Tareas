@@ -63,6 +63,26 @@ namespace TaskNotes_MonitoreoTareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_ojo_cerrado_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-ojo-cerrado-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_visible_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-visible-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TaskNotes_darklogo {
             get {
                 object obj = ResourceManager.GetObject("TaskNotes_darklogo", resourceCulture);
