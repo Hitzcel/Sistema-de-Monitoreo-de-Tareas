@@ -19,7 +19,7 @@ namespace TaskNotes_MonitoreoTareas.Clases
             Graphics g = e.Graphics;
 
             // Fondo
-            g.FillRectangle(new SolidBrush(Color.FromArgb(28, 28, 30)), rect);
+            g.FillRectangle(new SolidBrush(Color.FromArgb(44, 44, 46)), rect);
 
             // Calcular el ancho del progreso
             if (this.Maximum > 0)
