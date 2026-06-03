@@ -9,16 +9,17 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TaskNotes_MonitoreoTareas.Forms;
 
 namespace TaskNotes_MonitoreoTareas
 {
     
-    public partial class Form1 : Form
+    public partial class FSplahScreen : Form
     {
         private int carga = 0;
         
 
-        public Form1()
+        public FSplahScreen()
         {
             InitializeComponent();
             lblCarga.Text = "Iniciando...";
@@ -48,6 +49,10 @@ namespace TaskNotes_MonitoreoTareas
             {
                 barraCarga.Value = 0;
                 timerCarga.Stop();
+                this.Hide();
+
+                FLogin login = new FLogin();
+                login.ShowDialog();
                 this.Close();
             }
         }

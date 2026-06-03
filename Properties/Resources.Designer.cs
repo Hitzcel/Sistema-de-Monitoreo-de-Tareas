@@ -63,6 +63,36 @@ namespace TaskNotes_MonitoreoTareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TaskNotes_darklogo {
+            get {
+                object obj = ResourceManager.GetObject("TaskNotes_darklogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TaskNotes_lightdarklogo {
+            get {
+                object obj = ResourceManager.GetObject("TaskNotes_lightdarklogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TaskNotes_lightdarklogo1 {
+            get {
+                object obj = ResourceManager.GetObject("TaskNotes_lightdarklogo1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TaskNotes_lightlogo {
             get {
                 object obj = ResourceManager.GetObject("TaskNotes_lightlogo", resourceCulture);

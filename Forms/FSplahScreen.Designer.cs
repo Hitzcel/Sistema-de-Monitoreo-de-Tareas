@@ -2,7 +2,7 @@
 
 namespace TaskNotes_MonitoreoTareas
 {
-    partial class Form1
+    partial class FSplahScreen
     {
         /// <summary>
         ///  Required designer variable.
