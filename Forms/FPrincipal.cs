@@ -5,12 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TaskNotes_MonitoreoTareas.Sub_Forms;
 
 namespace TaskNotes_MonitoreoTareas.Forms
 {
     public partial class FPrincipal : Form
     {
         private Label itemActivo;
+        private Dictionary<string, Form> screens = new Dictionary<string, Form>();
         public FPrincipal()
         {
             InitializeComponent();
@@ -28,24 +30,39 @@ namespace TaskNotes_MonitoreoTareas.Forms
 
         private void FPrincipal_Load(object sender, EventArgs e)
         {
+            screens.Add("Dashboard", new FDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
+            screens.Add("Tareas", new FTareas() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
+            screens.Add("Notificaciones", new FNotificaciones() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
+            screens.Add("Ajustes", new FAjustes() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
+            
             ConfigurarSidebar();
+        }
+
+        private void loadPanel(string iTitle)
+        {
+            Form iForm = screens[iTitle];
+            this.panelLoad.Controls.Clear();
+            this.panelLoad.Controls.Add(iForm);
+            iForm.Show();
         }
 
         private void MenuItem_Click(object sender, EventArgs e)
         {
-            // Resetear todos
-            foreach (Control c in panelSidebar.Controls)
-                if (c is Label l && l.Tag?.ToString() == "menuItem")
-                {
-                    l.ForeColor = Color.FromArgb(180, 180, 180);
-                    l.BackColor = Color.Transparent;
-                }
+            foreach (Label l in new Label[] { lblDashboard, lblTareas, lblNotificaciones, lblAjustes })
+            {
+                l.ForeColor = Color.FromArgb(180, 180, 180);
+                l.BackColor = Color.Transparent;
+            }
 
             Label clicked = (Label)sender;
             clicked.ForeColor = Color.White;
-            //clicked.BackColor = Color.FromArgb(50, 50, 58);
             itemActivo = clicked;
-            panelSidebar.Invalidate();  
+            panelSidebar.Invalidate();
+
+            if (clicked == lblDashboard) loadPanel("Dashboard");
+            else if (clicked == lblTareas) loadPanel("Tareas");
+            else if (clicked == lblNotificaciones) loadPanel("Notificaciones");
+            else if (clicked == lblAjustes) loadPanel("Ajustes");
         }
 
         private void MenuItem_MouseEnter(object sender, EventArgs e)

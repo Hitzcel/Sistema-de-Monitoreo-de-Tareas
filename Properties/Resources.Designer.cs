@@ -63,6 +63,16 @@ namespace TaskNotes_MonitoreoTareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_más_24__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-más-24 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ojo_cerrado_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ojo-cerrado-24", resourceCulture);

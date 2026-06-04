@@ -36,8 +36,7 @@
             lblDashboard = new Label();
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
-            panel2 = new Panel();
-            lblNombrePantalla = new Label();
+            panelLoad = new Panel();
             panel1.SuspendLayout();
             panelSidebar.SuspendLayout();
             panel3.SuspendLayout();
@@ -134,31 +133,20 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // panel2
+            // panelLoad
             // 
-            panel2.Dock = DockStyle.Bottom;
-            panel2.Location = new Point(250, 108);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1350, 792);
-            panel2.TabIndex = 1;
-            // 
-            // lblNombrePantalla
-            // 
-            lblNombrePantalla.AutoSize = true;
-            lblNombrePantalla.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNombrePantalla.Location = new Point(269, 50);
-            lblNombrePantalla.Name = "lblNombrePantalla";
-            lblNombrePantalla.Size = new Size(155, 21);
-            lblNombrePantalla.TabIndex = 2;
-            lblNombrePantalla.Text = "Nombre de Pantalla.";
+            panelLoad.Dock = DockStyle.Fill;
+            panelLoad.Location = new Point(250, 0);
+            panelLoad.Name = "panelLoad";
+            panelLoad.Size = new Size(1350, 900);
+            panelLoad.TabIndex = 1;
             // 
             // FPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1600, 900);
-            Controls.Add(lblNombrePantalla);
-            Controls.Add(panel2);
+            Controls.Add(panelLoad);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FPrincipal";
@@ -171,7 +159,6 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -179,13 +166,12 @@
         private Panel panel1;
         private Panel panel3;
         private PictureBox pictureBox1;
-        private Panel panel2;
+        private Panel panelLoad;
         private Panel panelSidebar;
         private Label lblAjustes;
         private Label lblVencidas;
         private Label lblNotificaciones;
         private Label lblTareas;
         private Label lblDashboard;
-        private Label lblNombrePantalla;
     }
 }
