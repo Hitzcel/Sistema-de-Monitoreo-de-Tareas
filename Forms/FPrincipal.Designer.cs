@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             panelSidebar = new Panel();
+            lblUsuarios = new Label();
             lblAjustes = new Label();
             lblNotificaciones = new Label();
             lblTareas = new Label();
@@ -37,6 +38,8 @@
             panel3 = new Panel();
             pictureBox1 = new PictureBox();
             panelLoad = new Panel();
+            lblMinimizar = new Label();
+            lblCerrar = new Label();
             panel1.SuspendLayout();
             panelSidebar.SuspendLayout();
             panel3.SuspendLayout();
@@ -56,6 +59,7 @@
             // 
             // panelSidebar
             // 
+            panelSidebar.Controls.Add(lblUsuarios);
             panelSidebar.Controls.Add(lblAjustes);
             panelSidebar.Controls.Add(lblNotificaciones);
             panelSidebar.Controls.Add(lblTareas);
@@ -66,12 +70,24 @@
             panelSidebar.Size = new Size(250, 724);
             panelSidebar.TabIndex = 1;
             // 
+            // lblUsuarios
+            // 
+            lblUsuarios.AutoSize = true;
+            lblUsuarios.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsuarios.ForeColor = SystemColors.ControlLight;
+            lblUsuarios.Location = new Point(25, 89);
+            lblUsuarios.Name = "lblUsuarios";
+            lblUsuarios.Size = new Size(61, 18);
+            lblUsuarios.TabIndex = 4;
+            lblUsuarios.Tag = "menuItem";
+            lblUsuarios.Text = "Usuarios";
+            // 
             // lblAjustes
             // 
             lblAjustes.AutoSize = true;
             lblAjustes.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblAjustes.ForeColor = SystemColors.ControlLight;
-            lblAjustes.Location = new Point(25, 179);
+            lblAjustes.Location = new Point(25, 239);
             lblAjustes.Name = "lblAjustes";
             lblAjustes.Size = new Size(54, 18);
             lblAjustes.TabIndex = 3;
@@ -83,7 +99,7 @@
             lblNotificaciones.AutoSize = true;
             lblNotificaciones.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblNotificaciones.ForeColor = SystemColors.ControlLight;
-            lblNotificaciones.Location = new Point(25, 129);
+            lblNotificaciones.Location = new Point(25, 189);
             lblNotificaciones.Name = "lblNotificaciones";
             lblNotificaciones.Size = new Size(95, 18);
             lblNotificaciones.TabIndex = 2;
@@ -95,7 +111,7 @@
             lblTareas.AutoSize = true;
             lblTareas.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblTareas.ForeColor = SystemColors.ControlLight;
-            lblTareas.Location = new Point(25, 81);
+            lblTareas.Location = new Point(25, 141);
             lblTareas.Name = "lblTareas";
             lblTareas.Size = new Size(71, 18);
             lblTareas.TabIndex = 1;
@@ -135,17 +151,45 @@
             // 
             // panelLoad
             // 
-            panelLoad.Dock = DockStyle.Fill;
-            panelLoad.Location = new Point(250, 0);
+            panelLoad.Location = new Point(250, 50);
             panelLoad.Name = "panelLoad";
-            panelLoad.Size = new Size(1350, 900);
+            panelLoad.Size = new Size(1350, 850);
             panelLoad.TabIndex = 1;
+            // 
+            // lblMinimizar
+            // 
+            lblMinimizar.AutoSize = true;
+            lblMinimizar.Cursor = Cursors.Hand;
+            lblMinimizar.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMinimizar.ForeColor = Color.FromArgb(232, 168, 56);
+            lblMinimizar.Location = new Point(1476, -9);
+            lblMinimizar.Name = "lblMinimizar";
+            lblMinimizar.Size = new Size(41, 38);
+            lblMinimizar.TabIndex = 2;
+            lblMinimizar.Text = "__";
+            lblMinimizar.Click += lblMinimizar_Click;
+            // 
+            // lblCerrar
+            // 
+            lblCerrar.AutoSize = true;
+            lblCerrar.Cursor = Cursors.Hand;
+            lblCerrar.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCerrar.ForeColor = Color.FromArgb(232, 168, 56);
+            lblCerrar.Location = new Point(1542, 0);
+            lblCerrar.Name = "lblCerrar";
+            lblCerrar.Size = new Size(32, 38);
+            lblCerrar.TabIndex = 3;
+            lblCerrar.Text = "x";
+            lblCerrar.Click += lblCerrar_Click;
             // 
             // FPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(28, 28, 30);
             ClientSize = new Size(1600, 900);
+            Controls.Add(lblCerrar);
+            Controls.Add(lblMinimizar);
             Controls.Add(panelLoad);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
@@ -159,6 +203,7 @@
             panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -173,5 +218,8 @@
         private Label lblNotificaciones;
         private Label lblTareas;
         private Label lblDashboard;
+        private Label lblUsuarios;
+        private Label lblMinimizar;
+        private Label lblCerrar;
     }
 }

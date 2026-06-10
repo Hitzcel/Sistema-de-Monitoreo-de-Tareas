@@ -63,6 +63,46 @@ namespace TaskNotes_MonitoreoTareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Color_perfil {
+            get {
+                object obj = ResourceManager.GetObject("Color-perfil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_búsqueda_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-búsqueda-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_información_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-información-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_llamada_de_conferencia_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-llamada-de-conferencia-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_más_24__1_ {
             get {
                 object obj = ResourceManager.GetObject("icons8-más-24 (1)", resourceCulture);
@@ -73,9 +113,39 @@ namespace TaskNotes_MonitoreoTareas.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_nuevo_correo_electrónico_sin_leer_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-nuevo-correo-electrónico-sin-leer-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_nuevo_correo_electrónico_sin_leer_64 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-nuevo-correo-electrónico-sin-leer-64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_ojo_cerrado_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ojo-cerrado-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_salida_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-salida-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

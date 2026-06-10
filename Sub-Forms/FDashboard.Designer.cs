@@ -332,7 +332,7 @@
             panel9.Controls.Add(panel10);
             panel9.Location = new Point(689, 597);
             panel9.Name = "panel9";
-            panel9.Size = new Size(552, 271);
+            panel9.Size = new Size(552, 241);
             panel9.TabIndex = 4;
             // 
             // txtNota
@@ -342,7 +342,7 @@
             txtNota.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtNota.Location = new Point(16, 77);
             txtNota.Name = "txtNota";
-            txtNota.Size = new Size(517, 179);
+            txtNota.Size = new Size(517, 142);
             txtNota.TabIndex = 6;
             txtNota.Text = "";
             // 
@@ -372,7 +372,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(247, 247, 245);
-            ClientSize = new Size(1350, 900);
+            ClientSize = new Size(1350, 850);
             Controls.Add(panel9);
             Controls.Add(panel8);
             Controls.Add(panel7);
