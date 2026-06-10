@@ -42,6 +42,8 @@
             cmbPrioridad = new ComboBox();
             label6 = new Label();
             dtpFechaLimite = new DateTimePicker();
+            label7 = new Label();
+            cmbAsignarA = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -113,6 +115,7 @@
             btnConfirmar.TabIndex = 25;
             btnConfirmar.Text = "Confirmar";
             btnConfirmar.UseVisualStyleBackColor = false;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // label4
             // 
@@ -211,11 +214,34 @@
             dtpFechaLimite.Size = new Size(346, 23);
             dtpFechaLimite.TabIndex = 35;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(28, 28, 30);
+            label7.Location = new Point(170, 346);
+            label7.Name = "label7";
+            label7.Size = new Size(56, 14);
+            label7.TabIndex = 39;
+            label7.Text = "Asignar a:";
+            // 
+            // cmbAsignarA
+            // 
+            cmbAsignarA.BackColor = Color.White;
+            cmbAsignarA.FormattingEnabled = true;
+            cmbAsignarA.Location = new Point(170, 370);
+            cmbAsignarA.Margin = new Padding(3, 2, 3, 2);
+            cmbAsignarA.Name = "cmbAsignarA";
+            cmbAsignarA.Size = new Size(346, 23);
+            cmbAsignarA.TabIndex = 38;
+            // 
             // FDatosTarea
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(706, 527);
+            Controls.Add(label7);
+            Controls.Add(cmbAsignarA);
             Controls.Add(dtpFechaLimite);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -262,5 +288,7 @@
         private ComboBox cmbPrioridad;
         private Label label6;
         private DateTimePicker dtpFechaLimite;
+        private Label label7;
+        private ComboBox cmbAsignarA;
     }
 }
