@@ -43,12 +43,12 @@
             btnEditar = new Button();
             panel5 = new Panel();
             panel4 = new Panel();
-            label10 = new Label();
+            lblAsignadoA = new Label();
             label9 = new Label();
             pictureBox2 = new PictureBox();
-            comboBox3 = new ComboBox();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
+            cmbEstado = new ComboBox();
+            cmbPrioridad = new ComboBox();
+            cmbCategoria = new ComboBox();
             lblFecha = new Label();
             lblDescripcion = new Label();
             label8 = new Label();
@@ -183,9 +183,9 @@
             // 
             panel2.Controls.Add(panelButtons);
             panel2.Controls.Add(panel5);
-            panel2.Controls.Add(comboBox3);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(cmbEstado);
+            panel2.Controls.Add(cmbPrioridad);
+            panel2.Controls.Add(cmbCategoria);
             panel2.Controls.Add(lblFecha);
             panel2.Controls.Add(lblDescripcion);
             panel2.Controls.Add(label8);
@@ -225,6 +225,7 @@
             btnEliminar.TabIndex = 23;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnEditar
             // 
@@ -240,6 +241,7 @@
             btnEditar.TabIndex = 22;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = false;
+            btnEditar.Click += btnEditar_Click;
             // 
             // panel5
             // 
@@ -253,7 +255,7 @@
             // panel4
             // 
             panel4.BackColor = Color.FromArgb(28, 28, 30);
-            panel4.Controls.Add(label10);
+            panel4.Controls.Add(lblAsignadoA);
             panel4.Controls.Add(label9);
             panel4.Controls.Add(pictureBox2);
             panel4.Location = new Point(3, 3);
@@ -261,16 +263,16 @@
             panel4.Size = new Size(626, 71);
             panel4.TabIndex = 15;
             // 
-            // label10
+            // lblAsignadoA
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label10.ForeColor = Color.White;
-            label10.Location = new Point(84, 38);
-            label10.Name = "label10";
-            label10.Size = new Size(98, 21);
-            label10.TabIndex = 11;
-            label10.Text = "detalle aquí.";
+            lblAsignadoA.AutoSize = true;
+            lblAsignadoA.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAsignadoA.ForeColor = Color.White;
+            lblAsignadoA.Location = new Point(84, 38);
+            lblAsignadoA.Name = "lblAsignadoA";
+            lblAsignadoA.Size = new Size(98, 21);
+            lblAsignadoA.TabIndex = 11;
+            lblAsignadoA.Text = "detalle aquí.";
             // 
             // label9
             // 
@@ -293,36 +295,37 @@
             pictureBox2.TabIndex = 0;
             pictureBox2.TabStop = false;
             // 
-            // comboBox3
+            // cmbEstado
             // 
-            comboBox3.BackColor = Color.White;
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(154, 400);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(243, 28);
-            comboBox3.TabIndex = 14;
+            cmbEstado.BackColor = Color.White;
+            cmbEstado.FormattingEnabled = true;
+            cmbEstado.Location = new Point(154, 400);
+            cmbEstado.Name = "cmbEstado";
+            cmbEstado.Size = new Size(243, 28);
+            cmbEstado.TabIndex = 14;
+            cmbEstado.SelectedIndexChanged += cmbEstado_SelectedIndexChanged;
             // 
-            // comboBox2
+            // cmbPrioridad
             // 
-            comboBox2.BackColor = Color.White;
-            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox2.Enabled = false;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(154, 291);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(243, 28);
-            comboBox2.TabIndex = 13;
+            cmbPrioridad.BackColor = Color.White;
+            cmbPrioridad.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPrioridad.Enabled = false;
+            cmbPrioridad.FormattingEnabled = true;
+            cmbPrioridad.Location = new Point(154, 291);
+            cmbPrioridad.Name = "cmbPrioridad";
+            cmbPrioridad.Size = new Size(243, 28);
+            cmbPrioridad.TabIndex = 13;
             // 
-            // comboBox1
+            // cmbCategoria
             // 
-            comboBox1.BackColor = Color.White;
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Enabled = false;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(154, 240);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(243, 28);
-            comboBox1.TabIndex = 12;
+            cmbCategoria.BackColor = Color.White;
+            cmbCategoria.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategoria.Enabled = false;
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Location = new Point(154, 240);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(243, 28);
+            cmbCategoria.TabIndex = 12;
             // 
             // lblFecha
             // 
@@ -455,6 +458,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FTareas";
             Text = "FTareas";
+            Load += FTareas_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             groupBox1.ResumeLayout(false);
@@ -498,11 +502,11 @@
         private Panel panel4;
         private Label label9;
         private PictureBox pictureBox2;
-        private ComboBox comboBox3;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
+        private ComboBox cmbEstado;
+        private ComboBox cmbPrioridad;
+        private ComboBox cmbCategoria;
         private Panel panel5;
-        private Label label10;
+        private Label lblAsignadoA;
         private Panel panelButtons;
         private Button btnEliminar;
         private Button btnEditar;

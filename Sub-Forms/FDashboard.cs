@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TaskNotes_MonitoreoTareas.Clases;
+using TaskNotes_MonitoreoTareas.Modelos;
 
 namespace TaskNotes_MonitoreoTareas.Sub_Forms
 {
@@ -23,13 +24,17 @@ namespace TaskNotes_MonitoreoTareas.Sub_Forms
 
         private void CargarEstadisticas()
         {
-            label4.Text = "24";   // número total
+            var misTareas = DatosApp.UsuarioActual.Rol == "Admin"
+                ? DatosApp.Tareas.AsEnumerable()
+                : DatosApp.Tareas.Where(t =>
+                    t.AsignadoA == DatosApp.UsuarioActual.Nombre ||
+                    DatosApp.Grupos.Any(g => g.Nombre == t.AsignadoA &&
+                        g.Miembros.Any(m => m.Nombre == DatosApp.UsuarioActual.Nombre)));
 
-            label5.Text = "8";    // pendientes
-
-            label8.Text = "11";   // en progreso
-
-            label11.Text = "5";    // completadas
+            label4.Text = misTareas.Count().ToString();
+            label5.Text = misTareas.Count(t => t.Estado == "Pendiente").ToString();
+            label8.Text = misTareas.Count(t => t.Estado == "En progreso").ToString();
+            label11.Text = misTareas.Count(t => t.Estado == "Completada").ToString();
         }
 
         private void CargarTareasRecientes()
@@ -39,16 +44,26 @@ namespace TaskNotes_MonitoreoTareas.Sub_Forms
             flowTareas.WrapContents = false;
             flowTareas.AutoScroll = true;
 
-            // Simulación de datos, por el momento.
-            var tareas = new[]
-            {
-                new { Nombre = "Revisar propuesta del cliente", Categoria = "Trabajo", Fecha = "Hoy", Progreso = 80 },
-                new { Nombre = "Estudiar para parcial",         Categoria = "Estudio", Fecha = "Jue 06", Progreso = 40 },
-                new { Nombre = "Llamar al médico",              Categoria = "Salud",   Fecha = "Vie 07", Progreso = 0  },
-            };
+            var tareas = DatosApp.UsuarioActual.Rol == "Admin"
+            ? DatosApp.Tareas.OrderBy(t => t.FechaLimite).Take(5)
+            : DatosApp.Tareas
+                .Where(t => t.AsignadoA == DatosApp.UsuarioActual.Nombre ||
+                    DatosApp.Grupos.Any(g => g.Nombre == t.AsignadoA &&
+                        g.Miembros.Any(m => m.Nombre == DatosApp.UsuarioActual.Nombre)))
+                .OrderBy(t => t.FechaLimite)
+                .Take(5);
 
             foreach (var t in tareas)
-                flowTareas.Controls.Add(CrearTarjetaTarea(t.Nombre, t.Categoria, t.Fecha, t.Progreso));
+            {
+                string fecha = t.FechaLimite.Date == DateTime.Today ? "Hoy" :
+                               t.FechaLimite.Date == DateTime.Today.AddDays(1) ? "Mañana" :
+                               t.FechaLimite.ToString("ddd dd");
+
+                int progreso = t.Estado == "Completada" ? 100 :
+                               t.Estado == "En progreso" ? 50 : 0;
+
+                flowTareas.Controls.Add(CrearTarjetaTarea(t.Titulo, t.Categoria, fecha, progreso));
+            }
         }
 
         private Panel CrearTarjetaTarea(string nombre, string categoria, string fecha, int progreso)
@@ -111,16 +126,33 @@ namespace TaskNotes_MonitoreoTareas.Sub_Forms
             flowFechas.AutoScroll = true;
             flowFechas.Padding = new Padding(8);
 
-            // Estos datos vendrán de tu modelo real
-            var fechas = new[]
-            {
-        new { Etiqueta = "Hoy",    Color = Color.FromArgb(255, 200, 200), Texto = "Revisar propuesta cliente" },
-        new { Etiqueta = "Mañana", Color = Color.FromArgb(255, 235, 180), Texto = "Entregar reporte mensual"  },
-        new { Etiqueta = "Jue 06", Color = Color.FromArgb(200, 220, 255), Texto = "Parcial de programación"   },
-    };
+            var proximas = DatosApp.UsuarioActual.Rol == "Admin"
+             ? DatosApp.Tareas
+                 .Where(t => t.FechaLimite.Date >= DateTime.Today)
+                 .OrderBy(t => t.FechaLimite)
+                 .Take(5)
+             : DatosApp.Tareas
+                 .Where(t => t.FechaLimite.Date >= DateTime.Today &&
+                     (t.AsignadoA == DatosApp.UsuarioActual.Nombre ||
+                     DatosApp.Grupos.Any(g => g.Nombre == t.AsignadoA &&
+                         g.Miembros.Any(m => m.Nombre == DatosApp.UsuarioActual.Nombre))))
+                 .OrderBy(t => t.FechaLimite)
+                 .Take(5);
 
-            foreach (var f in fechas)
-                flowFechas.Controls.Add(CrearFilaFecha(f.Etiqueta, f.Color, f.Texto));
+            foreach (var t in proximas)
+            {
+                string etiqueta = t.FechaLimite.Date == DateTime.Today ? "Hoy" :
+                                  t.FechaLimite.Date == DateTime.Today.AddDays(1) ? "Mañana" :
+                                  t.FechaLimite.ToString("ddd dd");
+
+                Color color = t.FechaLimite.Date == DateTime.Today
+                    ? Color.FromArgb(255, 200, 200)
+                    : t.FechaLimite.Date == DateTime.Today.AddDays(1)
+                    ? Color.FromArgb(255, 235, 180)
+                    : Color.FromArgb(200, 220, 255);
+
+                flowFechas.Controls.Add(CrearFilaFecha(etiqueta, color, t.Titulo));
+            }
         }
 
         private Panel CrearFilaFecha(string etiqueta, Color colorEtiqueta, string texto)
@@ -192,6 +224,39 @@ namespace TaskNotes_MonitoreoTareas.Sub_Forms
             CargarTareasRecientes();
             CargarProximasFechas();
             ConfigurarNotaRapida();
+        }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            string busqueda = txtBuscar.Text.Trim().ToLower();
+
+            flowTareas.Controls.Clear();
+
+            var tareas = DatosApp.UsuarioActual.Rol == "Admin"
+                ? DatosApp.Tareas.AsEnumerable()
+                : DatosApp.Tareas.Where(t =>
+                    t.AsignadoA == DatosApp.UsuarioActual.Nombre ||
+                    DatosApp.Grupos.Any(g => g.Nombre == t.AsignadoA &&
+                        g.Miembros.Any(m => m.Nombre == DatosApp.UsuarioActual.Nombre)));
+
+            var filtradas = string.IsNullOrEmpty(busqueda)
+                ? tareas.OrderBy(t => t.FechaLimite).Take(5)
+                : tareas.Where(t =>
+                    t.Titulo.ToLower().Contains(busqueda) ||
+                    t.Categoria.ToLower().Contains(busqueda) ||
+                    t.AsignadoA.ToLower().Contains(busqueda));
+
+            foreach (var t in filtradas)
+            {
+                string fecha = t.FechaLimite.Date == DateTime.Today ? "Hoy" :
+                               t.FechaLimite.Date == DateTime.Today.AddDays(1) ? "Mañana" :
+                               t.FechaLimite.ToString("ddd dd");
+
+                int progreso = t.Estado == "Completada" ? 100 :
+                               t.Estado == "En progreso" ? 50 : 0;
+
+                flowTareas.Controls.Add(CrearTarjetaTarea(t.Titulo, t.Categoria, fecha, progreso));
+            }
         }
     }
 }

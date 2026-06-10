@@ -31,18 +31,18 @@
             panel1 = new Panel();
             btnNuevaTarea = new Button();
             label1 = new Label();
-            this.panelHoy = new Panel();
-            this.panelEstaSemana = new Panel();
-            panelAnteriores = new Panel();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
+            panelHoy = new Panel();
             flowHoy = new FlowLayoutPanel();
+            label2 = new Label();
+            panelEstaSemana = new Panel();
             flowEstaSemana = new FlowLayoutPanel();
+            label3 = new Label();
+            panelAnteriores = new Panel();
             flowAnteriores = new FlowLayoutPanel();
+            label4 = new Label();
             panel1.SuspendLayout();
-            this.panelHoy.SuspendLayout();
-            this.panelEstaSemana.SuspendLayout();
+            panelHoy.SuspendLayout();
+            panelEstaSemana.SuspendLayout();
             panelAnteriores.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,6 +72,7 @@
             btnNuevaTarea.TabIndex = 1;
             btnNuevaTarea.Text = "Marcar todas como leídas";
             btnNuevaTarea.UseVisualStyleBackColor = false;
+            btnNuevaTarea.Click += btnNuevaTarea_Click;
             // 
             // label1
             // 
@@ -85,30 +86,19 @@
             // 
             // panelHoy
             // 
-            this.panelHoy.Controls.Add(flowHoy);
-            this.panelHoy.Controls.Add(label2);
-            this.panelHoy.Location = new Point(34, 159);
-            this.panelHoy.Name = "panelHoy";
-            this.panelHoy.Size = new Size(1283, 222);
-            this.panelHoy.TabIndex = 3;
+            panelHoy.Controls.Add(flowHoy);
+            panelHoy.Controls.Add(label2);
+            panelHoy.Location = new Point(34, 159);
+            panelHoy.Name = "panelHoy";
+            panelHoy.Size = new Size(1283, 222);
+            panelHoy.TabIndex = 3;
             // 
-            // panelEstaSemana
+            // flowHoy
             // 
-            this.panelEstaSemana.Controls.Add(flowEstaSemana);
-            this.panelEstaSemana.Controls.Add(label3);
-            this.panelEstaSemana.Location = new Point(34, 387);
-            this.panelEstaSemana.Name = "panelEstaSemana";
-            this.panelEstaSemana.Size = new Size(1283, 222);
-            this.panelEstaSemana.TabIndex = 4;
-            // 
-            // panelAnteriores
-            // 
-            panelAnteriores.Controls.Add(flowAnteriores);
-            panelAnteriores.Controls.Add(label4);
-            panelAnteriores.Location = new Point(34, 616);
-            panelAnteriores.Name = "panelAnteriores";
-            panelAnteriores.Size = new Size(1283, 222);
-            panelAnteriores.TabIndex = 5;
+            flowHoy.Location = new Point(34, 64);
+            flowHoy.Name = "flowHoy";
+            flowHoy.Size = new Size(1227, 141);
+            flowHoy.TabIndex = 2;
             // 
             // label2
             // 
@@ -121,6 +111,22 @@
             label2.TabIndex = 1;
             label2.Text = "Hoy";
             // 
+            // panelEstaSemana
+            // 
+            panelEstaSemana.Controls.Add(flowEstaSemana);
+            panelEstaSemana.Controls.Add(label3);
+            panelEstaSemana.Location = new Point(34, 387);
+            panelEstaSemana.Name = "panelEstaSemana";
+            panelEstaSemana.Size = new Size(1283, 222);
+            panelEstaSemana.TabIndex = 4;
+            // 
+            // flowEstaSemana
+            // 
+            flowEstaSemana.Location = new Point(34, 67);
+            flowEstaSemana.Name = "flowEstaSemana";
+            flowEstaSemana.Size = new Size(1227, 141);
+            flowEstaSemana.TabIndex = 3;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -131,6 +137,22 @@
             label3.Size = new Size(116, 24);
             label3.TabIndex = 2;
             label3.Text = "Esta Semana";
+            // 
+            // panelAnteriores
+            // 
+            panelAnteriores.Controls.Add(flowAnteriores);
+            panelAnteriores.Controls.Add(label4);
+            panelAnteriores.Location = new Point(34, 616);
+            panelAnteriores.Name = "panelAnteriores";
+            panelAnteriores.Size = new Size(1283, 222);
+            panelAnteriores.TabIndex = 5;
+            // 
+            // flowAnteriores
+            // 
+            flowAnteriores.Location = new Point(34, 65);
+            flowAnteriores.Name = "flowAnteriores";
+            flowAnteriores.Size = new Size(1227, 141);
+            flowAnteriores.TabIndex = 3;
             // 
             // label4
             // 
@@ -143,45 +165,25 @@
             label4.TabIndex = 2;
             label4.Text = "Anteriores";
             // 
-            // flowHoy
-            // 
-            flowHoy.Location = new Point(34, 64);
-            flowHoy.Name = "flowHoy";
-            flowHoy.Size = new Size(1227, 141);
-            flowHoy.TabIndex = 2;
-            // 
-            // flowEstaSemana
-            // 
-            flowEstaSemana.Location = new Point(34, 67);
-            flowEstaSemana.Name = "flowEstaSemana";
-            flowEstaSemana.Size = new Size(1227, 141);
-            flowEstaSemana.TabIndex = 3;
-            // 
-            // flowAnteriores
-            // 
-            flowAnteriores.Location = new Point(34, 65);
-            flowAnteriores.Name = "flowAnteriores";
-            flowAnteriores.Size = new Size(1227, 141);
-            flowAnteriores.TabIndex = 3;
-            // 
             // FNotificaciones
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1350, 850);
             Controls.Add(panelAnteriores);
-            Controls.Add(this.panelEstaSemana);
-            Controls.Add(this.panelHoy);
+            Controls.Add(panelEstaSemana);
+            Controls.Add(panelHoy);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FNotificaciones";
             Text = "FNotificaciones";
+            Load += FNotificaciones_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            this.panelHoy.ResumeLayout(false);
-            this.panelHoy.PerformLayout();
-            this.panelEstaSemana.ResumeLayout(false);
-            this.panelEstaSemana.PerformLayout();
+            panelHoy.ResumeLayout(false);
+            panelHoy.PerformLayout();
+            panelEstaSemana.ResumeLayout(false);
+            panelEstaSemana.PerformLayout();
             panelAnteriores.ResumeLayout(false);
             panelAnteriores.PerformLayout();
             ResumeLayout(false);

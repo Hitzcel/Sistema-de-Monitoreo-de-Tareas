@@ -153,6 +153,7 @@
             btnEditarPassword.TabIndex = 24;
             btnEditarPassword.Text = "Editar";
             btnEditarPassword.UseVisualStyleBackColor = false;
+            btnEditarPassword.Click += btnEditarPassword_Click;
             // 
             // btnEditarTelefono
             // 
@@ -170,6 +171,7 @@
             btnEditarTelefono.TabIndex = 24;
             btnEditarTelefono.Text = "Editar";
             btnEditarTelefono.UseVisualStyleBackColor = false;
+            btnEditarTelefono.Click += btnEditarTelefono_Click;
             // 
             // btnEditarCorreo
             // 
@@ -187,6 +189,7 @@
             btnEditarCorreo.TabIndex = 23;
             btnEditarCorreo.Text = "Editar";
             btnEditarCorreo.UseVisualStyleBackColor = false;
+            btnEditarCorreo.Click += btnEditarCorreo_Click;
             // 
             // lblPassword
             // 
@@ -368,6 +371,7 @@
             button1.TabIndex = 22;
             button1.Text = "Cerrar sesión";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // FAjustes
             // 
@@ -383,6 +387,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FAjustes";
             Text = "FAjustes";
+            Load += FAjustes_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);

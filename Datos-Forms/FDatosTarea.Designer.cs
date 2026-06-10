@@ -42,6 +42,8 @@
             cmbPrioridad = new ComboBox();
             label6 = new Label();
             dtpFechaLimite = new DateTimePicker();
+            label7 = new Label();
+            cmbAsignarA = new ComboBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -87,7 +89,7 @@
             btnCancelar.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = Color.FromArgb(28, 28, 30);
             btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCancelar.Location = new Point(194, 594);
+            btnCancelar.Location = new Point(194, 629);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(180, 51);
             btnCancelar.TabIndex = 26;
@@ -103,12 +105,13 @@
             btnConfirmar.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnConfirmar.ForeColor = Color.White;
             btnConfirmar.ImageAlign = ContentAlignment.MiddleLeft;
-            btnConfirmar.Location = new Point(409, 594);
+            btnConfirmar.Location = new Point(409, 629);
             btnConfirmar.Name = "btnConfirmar";
             btnConfirmar.Size = new Size(180, 51);
             btnConfirmar.TabIndex = 25;
             btnConfirmar.Text = "Confirmar";
             btnConfirmar.UseVisualStyleBackColor = false;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // label4
             // 
@@ -190,7 +193,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.FromArgb(28, 28, 30);
-            label6.Location = new Point(194, 460);
+            label6.Location = new Point(194, 530);
             label6.Name = "label6";
             label6.Size = new Size(88, 18);
             label6.TabIndex = 34;
@@ -198,16 +201,38 @@
             // 
             // dtpFechaLimite
             // 
-            dtpFechaLimite.Location = new Point(194, 494);
+            dtpFechaLimite.Location = new Point(194, 564);
             dtpFechaLimite.Name = "dtpFechaLimite";
             dtpFechaLimite.Size = new Size(395, 27);
             dtpFechaLimite.TabIndex = 35;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Calibri", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(28, 28, 30);
+            label7.Location = new Point(194, 453);
+            label7.Name = "label7";
+            label7.Size = new Size(68, 18);
+            label7.TabIndex = 37;
+            label7.Text = "Asignar a:";
+            // 
+            // cmbAsignarA
+            // 
+            cmbAsignarA.BackColor = Color.White;
+            cmbAsignarA.FormattingEnabled = true;
+            cmbAsignarA.Location = new Point(194, 485);
+            cmbAsignarA.Name = "cmbAsignarA";
+            cmbAsignarA.Size = new Size(395, 28);
+            cmbAsignarA.TabIndex = 36;
             // 
             // FDatosTarea
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(807, 703);
+            Controls.Add(label7);
+            Controls.Add(cmbAsignarA);
             Controls.Add(dtpFechaLimite);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -253,5 +278,7 @@
         private ComboBox cmbPrioridad;
         private Label label6;
         private DateTimePicker dtpFechaLimite;
+        private Label label7;
+        private ComboBox cmbAsignarA;
     }
 }

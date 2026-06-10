@@ -31,10 +31,10 @@
             label4 = new Label();
             label1 = new Label();
             panel1 = new Panel();
-            txtNombreUsuario = new TextBox();
-            chkUsuarios = new CheckedListBox();
-            button1 = new Button();
-            btnNuevoUsuario = new Button();
+            txtNombre = new TextBox();
+            chkListUsuario = new CheckedListBox();
+            btnCancelar = new Button();
+            btnConfirmar = new Button();
             label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -64,10 +64,10 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(28, 28, 30);
-            panel1.Controls.Add(txtNombreUsuario);
-            panel1.Controls.Add(chkUsuarios);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(btnNuevoUsuario);
+            panel1.Controls.Add(txtNombre);
+            panel1.Controls.Add(chkListUsuario);
+            panel1.Controls.Add(btnCancelar);
+            panel1.Controls.Add(btnConfirmar);
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label1);
@@ -76,60 +76,61 @@
             panel1.Size = new Size(799, 695);
             panel1.TabIndex = 1;
             // 
-            // txtNombreUsuario
+            // txtNombre
             // 
-            txtNombreUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtNombreUsuario.BackColor = Color.FromArgb(232, 168, 56);
-            txtNombreUsuario.BorderStyle = BorderStyle.FixedSingle;
-            txtNombreUsuario.Font = new Font("Calibri", 9F);
-            txtNombreUsuario.ForeColor = Color.Black;
-            txtNombreUsuario.Location = new Point(189, 160);
-            txtNombreUsuario.Multiline = true;
-            txtNombreUsuario.Name = "txtNombreUsuario";
-            txtNombreUsuario.Size = new Size(395, 36);
-            txtNombreUsuario.TabIndex = 23;
+            txtNombre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtNombre.BackColor = Color.FromArgb(232, 168, 56);
+            txtNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtNombre.Font = new Font("Calibri", 9F);
+            txtNombre.ForeColor = Color.Black;
+            txtNombre.Location = new Point(189, 160);
+            txtNombre.Multiline = true;
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(395, 36);
+            txtNombre.TabIndex = 23;
             // 
-            // chkUsuarios
+            // chkListUsuario
             // 
-            chkUsuarios.BackColor = Color.FromArgb(232, 168, 56);
-            chkUsuarios.BorderStyle = BorderStyle.FixedSingle;
-            chkUsuarios.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            chkUsuarios.FormattingEnabled = true;
-            chkUsuarios.Location = new Point(189, 246);
-            chkUsuarios.Name = "chkUsuarios";
-            chkUsuarios.Size = new Size(395, 324);
-            chkUsuarios.TabIndex = 22;
+            chkListUsuario.BackColor = Color.FromArgb(232, 168, 56);
+            chkListUsuario.BorderStyle = BorderStyle.FixedSingle;
+            chkListUsuario.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            chkListUsuario.FormattingEnabled = true;
+            chkListUsuario.Location = new Point(189, 246);
+            chkListUsuario.Name = "chkListUsuario";
+            chkListUsuario.Size = new Size(395, 324);
+            chkListUsuario.TabIndex = 22;
             // 
-            // button1
+            // btnCancelar
             // 
-            button1.BackColor = Color.FromArgb(28, 28, 30);
-            button1.FlatAppearance.BorderColor = Color.FromArgb(232, 168, 56);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(232, 168, 56);
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(189, 604);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 51);
-            button1.TabIndex = 21;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnCancelar.BackColor = Color.FromArgb(28, 28, 30);
+            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(232, 168, 56);
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.ForeColor = Color.FromArgb(232, 168, 56);
+            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelar.Location = new Point(189, 604);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(180, 51);
+            btnCancelar.TabIndex = 21;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
-            // btnNuevoUsuario
+            // btnConfirmar
             // 
-            btnNuevoUsuario.BackColor = Color.FromArgb(232, 168, 56);
-            btnNuevoUsuario.FlatAppearance.BorderColor = Color.FromArgb(28, 28, 30);
-            btnNuevoUsuario.FlatStyle = FlatStyle.Flat;
-            btnNuevoUsuario.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNuevoUsuario.ForeColor = Color.FromArgb(28, 28, 30);
-            btnNuevoUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNuevoUsuario.Location = new Point(404, 604);
-            btnNuevoUsuario.Name = "btnNuevoUsuario";
-            btnNuevoUsuario.Size = new Size(180, 51);
-            btnNuevoUsuario.TabIndex = 20;
-            btnNuevoUsuario.Text = "Confirmar";
-            btnNuevoUsuario.UseVisualStyleBackColor = false;
+            btnConfirmar.BackColor = Color.FromArgb(232, 168, 56);
+            btnConfirmar.FlatAppearance.BorderColor = Color.FromArgb(28, 28, 30);
+            btnConfirmar.FlatStyle = FlatStyle.Flat;
+            btnConfirmar.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirmar.ForeColor = Color.FromArgb(28, 28, 30);
+            btnConfirmar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConfirmar.Location = new Point(404, 604);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new Size(180, 51);
+            btnConfirmar.TabIndex = 20;
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseVisualStyleBackColor = false;
+            btnConfirmar.Click += btnConfirmar_Click_1;
             // 
             // label2
             // 
@@ -140,7 +141,7 @@
             label2.Name = "label2";
             label2.Size = new Size(183, 18);
             label2.TabIndex = 15;
-            label2.Text = "Ingrese el segundo apellido:";
+            label2.Text = "Elegir miembros del equipo:";
             // 
             // FDatosGrupo
             // 
@@ -167,6 +168,9 @@
         private Button btnNuevoUsuario;
         private Label label2;
         private CheckedListBox chkUsuarios;
-        private TextBox txtNombreUsuario;
+        private TextBox txtNombre;
+        private Button btnCancelar;
+        private Button btnConfirmar;
+        private CheckedListBox chkListUsuario;
     }
 }

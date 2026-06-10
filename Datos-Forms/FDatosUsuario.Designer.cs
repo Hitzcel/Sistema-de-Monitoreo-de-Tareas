@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
-            btnNuevoUsuario = new Button();
+            btnCancelar = new Button();
+            btnConfirmar = new Button();
             label7 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -38,20 +38,20 @@
             label2 = new Label();
             label4 = new Label();
             label1 = new Label();
-            comboBox2 = new ComboBox();
-            comboBox1 = new ComboBox();
-            textBox3 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            txtUsuario = new TextBox();
+            cmbRol = new ComboBox();
+            cmbEstado = new ComboBox();
+            txtCorreo = new TextBox();
+            txtTelefono = new TextBox();
+            txtPrimerApellido = new TextBox();
+            txtPrimerNombre = new TextBox();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(28, 28, 30);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(btnNuevoUsuario);
+            panel1.Controls.Add(btnCancelar);
+            panel1.Controls.Add(btnConfirmar);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
             panel1.Controls.Add(label5);
@@ -59,47 +59,48 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(label1);
-            panel1.Controls.Add(comboBox2);
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
-            panel1.Controls.Add(txtUsuario);
+            panel1.Controls.Add(cmbRol);
+            panel1.Controls.Add(cmbEstado);
+            panel1.Controls.Add(txtCorreo);
+            panel1.Controls.Add(txtTelefono);
+            panel1.Controls.Add(txtPrimerApellido);
+            panel1.Controls.Add(txtPrimerNombre);
             panel1.Location = new Point(4, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(799, 695);
             panel1.TabIndex = 0;
             // 
-            // button1
+            // btnCancelar
             // 
-            button1.BackColor = Color.FromArgb(28, 28, 30);
-            button1.FlatAppearance.BorderColor = Color.FromArgb(232, 168, 56);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.FromArgb(232, 168, 56);
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(189, 604);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 51);
-            button1.TabIndex = 21;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnCancelar.BackColor = Color.FromArgb(28, 28, 30);
+            btnCancelar.FlatAppearance.BorderColor = Color.FromArgb(232, 168, 56);
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCancelar.ForeColor = Color.FromArgb(232, 168, 56);
+            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCancelar.Location = new Point(189, 604);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(180, 51);
+            btnCancelar.TabIndex = 21;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click_1;
             // 
-            // btnNuevoUsuario
+            // btnConfirmar
             // 
-            btnNuevoUsuario.BackColor = Color.FromArgb(232, 168, 56);
-            btnNuevoUsuario.FlatAppearance.BorderColor = Color.FromArgb(28, 28, 30);
-            btnNuevoUsuario.FlatStyle = FlatStyle.Flat;
-            btnNuevoUsuario.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnNuevoUsuario.ForeColor = Color.FromArgb(28, 28, 30);
-            btnNuevoUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNuevoUsuario.Location = new Point(404, 604);
-            btnNuevoUsuario.Name = "btnNuevoUsuario";
-            btnNuevoUsuario.Size = new Size(180, 51);
-            btnNuevoUsuario.TabIndex = 20;
-            btnNuevoUsuario.Text = "Confirmar";
-            btnNuevoUsuario.UseVisualStyleBackColor = false;
+            btnConfirmar.BackColor = Color.FromArgb(232, 168, 56);
+            btnConfirmar.FlatAppearance.BorderColor = Color.FromArgb(28, 28, 30);
+            btnConfirmar.FlatStyle = FlatStyle.Flat;
+            btnConfirmar.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnConfirmar.ForeColor = Color.FromArgb(28, 28, 30);
+            btnConfirmar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnConfirmar.Location = new Point(404, 604);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new Size(180, 51);
+            btnConfirmar.TabIndex = 20;
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseVisualStyleBackColor = false;
+            btnConfirmar.Click += btnConfirmar_Click_1;
             // 
             // label7
             // 
@@ -178,75 +179,75 @@
             label1.TabIndex = 13;
             label1.Text = "Nuevo Usuario";
             // 
-            // comboBox2
+            // cmbRol
             // 
-            comboBox2.BackColor = Color.White;
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(348, 518);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(236, 28);
-            comboBox2.TabIndex = 12;
+            cmbRol.BackColor = Color.White;
+            cmbRol.FormattingEnabled = true;
+            cmbRol.Location = new Point(327, 463);
+            cmbRol.Name = "cmbRol";
+            cmbRol.Size = new Size(257, 28);
+            cmbRol.TabIndex = 12;
             // 
-            // comboBox1
+            // cmbEstado
             // 
-            comboBox1.BackColor = Color.White;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(327, 463);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(257, 28);
-            comboBox1.TabIndex = 11;
+            cmbEstado.BackColor = Color.White;
+            cmbEstado.FormattingEnabled = true;
+            cmbEstado.Location = new Point(363, 513);
+            cmbEstado.Name = "cmbEstado";
+            cmbEstado.Size = new Size(221, 28);
+            cmbEstado.TabIndex = 11;
             // 
-            // textBox3
+            // txtCorreo
             // 
-            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox3.BackColor = Color.FromArgb(232, 168, 56);
-            textBox3.BorderStyle = BorderStyle.FixedSingle;
-            textBox3.Font = new Font("Calibri", 9F);
-            textBox3.ForeColor = Color.Black;
-            textBox3.Location = new Point(189, 400);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(395, 36);
-            textBox3.TabIndex = 9;
+            txtCorreo.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtCorreo.BackColor = Color.FromArgb(232, 168, 56);
+            txtCorreo.BorderStyle = BorderStyle.FixedSingle;
+            txtCorreo.Font = new Font("Calibri", 9F);
+            txtCorreo.ForeColor = Color.Black;
+            txtCorreo.Location = new Point(189, 400);
+            txtCorreo.Multiline = true;
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(395, 36);
+            txtCorreo.TabIndex = 9;
             // 
-            // textBox2
+            // txtTelefono
             // 
-            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox2.BackColor = Color.FromArgb(232, 168, 56);
-            textBox2.BorderStyle = BorderStyle.FixedSingle;
-            textBox2.Font = new Font("Calibri", 9F);
-            textBox2.ForeColor = Color.Black;
-            textBox2.Location = new Point(189, 319);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(395, 36);
-            textBox2.TabIndex = 7;
+            txtTelefono.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtTelefono.BackColor = Color.FromArgb(232, 168, 56);
+            txtTelefono.BorderStyle = BorderStyle.FixedSingle;
+            txtTelefono.Font = new Font("Calibri", 9F);
+            txtTelefono.ForeColor = Color.Black;
+            txtTelefono.Location = new Point(189, 319);
+            txtTelefono.Multiline = true;
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(395, 36);
+            txtTelefono.TabIndex = 7;
             // 
-            // textBox1
+            // txtPrimerApellido
             // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = Color.FromArgb(232, 168, 56);
-            textBox1.BorderStyle = BorderStyle.FixedSingle;
-            textBox1.Font = new Font("Calibri", 9F);
-            textBox1.ForeColor = Color.Black;
-            textBox1.Location = new Point(189, 238);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(395, 36);
-            textBox1.TabIndex = 5;
+            txtPrimerApellido.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtPrimerApellido.BackColor = Color.FromArgb(232, 168, 56);
+            txtPrimerApellido.BorderStyle = BorderStyle.FixedSingle;
+            txtPrimerApellido.Font = new Font("Calibri", 9F);
+            txtPrimerApellido.ForeColor = Color.Black;
+            txtPrimerApellido.Location = new Point(189, 238);
+            txtPrimerApellido.Multiline = true;
+            txtPrimerApellido.Name = "txtPrimerApellido";
+            txtPrimerApellido.Size = new Size(395, 36);
+            txtPrimerApellido.TabIndex = 5;
             // 
-            // txtUsuario
+            // txtPrimerNombre
             // 
-            txtUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtUsuario.BackColor = Color.FromArgb(232, 168, 56);
-            txtUsuario.BorderStyle = BorderStyle.FixedSingle;
-            txtUsuario.Font = new Font("Calibri", 9F);
-            txtUsuario.ForeColor = Color.Black;
-            txtUsuario.Location = new Point(189, 159);
-            txtUsuario.Multiline = true;
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(395, 36);
-            txtUsuario.TabIndex = 3;
+            txtPrimerNombre.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtPrimerNombre.BackColor = Color.FromArgb(232, 168, 56);
+            txtPrimerNombre.BorderStyle = BorderStyle.FixedSingle;
+            txtPrimerNombre.Font = new Font("Calibri", 9F);
+            txtPrimerNombre.ForeColor = Color.Black;
+            txtPrimerNombre.Location = new Point(189, 159);
+            txtPrimerNombre.Multiline = true;
+            txtPrimerNombre.Name = "txtPrimerNombre";
+            txtPrimerNombre.Size = new Size(395, 36);
+            txtPrimerNombre.TabIndex = 3;
             // 
             // FDatosUsuario
             // 
@@ -267,20 +268,20 @@
         #endregion
 
         private Panel panel1;
-        private TextBox txtUsuario;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
-        private TextBox textBox3;
+        private TextBox txtPrimerNombre;    // primer nombre
+        private TextBox txtPrimerApellido; // segundo apellido
+        private TextBox txtTelefono;       // teléfono
+        private TextBox txtCorreo;         // correo
+        private ComboBox cmbRol;
+        private ComboBox cmbEstado;
         private Label label1;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label3;
         private Label label2;
+        private Label label3;
         private Label label4;
-        private Button button1;
-        private Button btnNuevoUsuario;
+        private Label label5;
+        private Label label6;
+        private Label label7;
+        private Button btnCancelar;        // Cancelar
+        private Button btnConfirmar; // Confirmar
     }
 }

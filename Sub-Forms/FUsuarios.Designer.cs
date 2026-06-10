@@ -35,20 +35,20 @@
             pictureBox1 = new PictureBox();
             txtBuscarUsuario = new TextBox();
             btnNuevoUsuario = new Button();
-            dataGridView1 = new DataGridView();
+            dgvUsuario = new DataGridView();
             tabGrupos = new TabPage();
             panel2 = new Panel();
             pictureBox2 = new PictureBox();
             txtBuscarGrupo = new TextBox();
-            button1 = new Button();
-            dataGridView2 = new DataGridView();
+            btnNuevoGrupo = new Button();
+            dgvGrupo = new DataGridView();
             tabControl1.SuspendLayout();
             tabUsuarios.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuario).BeginInit();
             tabGrupos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGrupo).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -79,7 +79,7 @@
             tabUsuarios.Controls.Add(pictureBox1);
             tabUsuarios.Controls.Add(txtBuscarUsuario);
             tabUsuarios.Controls.Add(btnNuevoUsuario);
-            tabUsuarios.Controls.Add(dataGridView1);
+            tabUsuarios.Controls.Add(dgvUsuario);
             tabUsuarios.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tabUsuarios.Location = new Point(4, 29);
             tabUsuarios.Name = "tabUsuarios";
@@ -118,6 +118,7 @@
             txtBuscarUsuario.PlaceholderText = "Buscar usuario...";
             txtBuscarUsuario.Size = new Size(587, 33);
             txtBuscarUsuario.TabIndex = 3;
+            txtBuscarUsuario.TextChanged += txtBuscarUsuario_TextChanged;
             // 
             // btnNuevoUsuario
             // 
@@ -128,30 +129,30 @@
             btnNuevoUsuario.ForeColor = SystemColors.ButtonHighlight;
             btnNuevoUsuario.Image = Properties.Resources.icons8_más_24__1_;
             btnNuevoUsuario.ImageAlign = ContentAlignment.MiddleLeft;
-            btnNuevoUsuario.Location = new Point(513, 596);
+            btnNuevoUsuario.Location = new Point(520, 600);
             btnNuevoUsuario.Name = "btnNuevoUsuario";
             btnNuevoUsuario.Size = new Size(195, 51);
-            btnNuevoUsuario.TabIndex = 2;
+            btnNuevoUsuario.TabIndex = 7;
             btnNuevoUsuario.Text = "Nuevo Usuario";
             btnNuevoUsuario.UseVisualStyleBackColor = false;
-            btnNuevoUsuario.Click += btnNuevoUsuario_Click;
+            btnNuevoUsuario.Click += btnNuevoUsuario_Click_1;
             // 
-            // dataGridView1
+            // dgvUsuario
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(45, 96);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1151, 471);
-            dataGridView1.TabIndex = 0;
+            dgvUsuario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuario.Location = new Point(45, 96);
+            dgvUsuario.Name = "dgvUsuario";
+            dgvUsuario.RowHeadersWidth = 51;
+            dgvUsuario.Size = new Size(1151, 471);
+            dgvUsuario.TabIndex = 0;
             // 
             // tabGrupos
             // 
             tabGrupos.Controls.Add(panel2);
             tabGrupos.Controls.Add(pictureBox2);
             tabGrupos.Controls.Add(txtBuscarGrupo);
-            tabGrupos.Controls.Add(button1);
-            tabGrupos.Controls.Add(dataGridView2);
+            tabGrupos.Controls.Add(btnNuevoGrupo);
+            tabGrupos.Controls.Add(dgvGrupo);
             tabGrupos.Font = new Font("Calibri", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tabGrupos.Location = new Point(4, 29);
             tabGrupos.Name = "tabGrupos";
@@ -191,32 +192,33 @@
             txtBuscarGrupo.PlaceholderText = "Buscar grupo...";
             txtBuscarGrupo.Size = new Size(587, 33);
             txtBuscarGrupo.TabIndex = 8;
+            txtBuscarGrupo.TextChanged += txtBuscarGrupo_TextChanged;
             // 
-            // button1
+            // btnNuevoGrupo
             // 
-            button1.BackColor = Color.FromArgb(28, 28, 30);
-            button1.FlatAppearance.BorderColor = Color.FromArgb(28, 28, 30);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Image = Properties.Resources.icons8_más_24__1_;
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(520, 600);
-            button1.Name = "button1";
-            button1.Size = new Size(195, 51);
-            button1.TabIndex = 7;
-            button1.Text = "Nuevo Grupo";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnNuevoGrupo.BackColor = Color.FromArgb(28, 28, 30);
+            btnNuevoGrupo.FlatAppearance.BorderColor = Color.FromArgb(28, 28, 30);
+            btnNuevoGrupo.FlatStyle = FlatStyle.Flat;
+            btnNuevoGrupo.Font = new Font("Calibri", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnNuevoGrupo.ForeColor = SystemColors.ButtonHighlight;
+            btnNuevoGrupo.Image = Properties.Resources.icons8_más_24__1_;
+            btnNuevoGrupo.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNuevoGrupo.Location = new Point(532, 607);
+            btnNuevoGrupo.Name = "btnNuevoGrupo";
+            btnNuevoGrupo.Size = new Size(187, 51);
+            btnNuevoGrupo.TabIndex = 11;
+            btnNuevoGrupo.Text = "Nuevo Grupo";
+            btnNuevoGrupo.UseVisualStyleBackColor = false;
+            btnNuevoGrupo.Click += btnNuevoGrupo_Click;
             // 
-            // dataGridView2
+            // dgvGrupo
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(52, 100);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.Size = new Size(1151, 471);
-            dataGridView2.TabIndex = 6;
+            dgvGrupo.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvGrupo.Location = new Point(52, 100);
+            dgvGrupo.Name = "dgvGrupo";
+            dgvGrupo.RowHeadersWidth = 51;
+            dgvGrupo.Size = new Size(1151, 471);
+            dgvGrupo.TabIndex = 6;
             // 
             // FUsuarios
             // 
@@ -229,15 +231,16 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FUsuarios";
             Text = "FUsuarios";
+            Load += FUsuarios_Load;
             tabControl1.ResumeLayout(false);
             tabUsuarios.ResumeLayout(false);
             tabUsuarios.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuario).EndInit();
             tabGrupos.ResumeLayout(false);
             tabGrupos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvGrupo).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -248,7 +251,7 @@
         private TabPage tabPage1;
         private TabPage tabUsuarios;
         private TabPage tabGrupos;
-        private DataGridView dataGridView1;
+        private DataGridView dgvUsuario;
         private Button btnNuevoUsuario;
         private Panel panel1;
         private PictureBox pictureBox1;
@@ -256,7 +259,7 @@
         private Panel panel2;
         private PictureBox pictureBox2;
         private TextBox txtBuscarGrupo;
-        private Button button1;
-        private DataGridView dataGridView2;
+        private Button btnNuevoGrupo;
+        private DataGridView dgvGrupo;
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            txtUsuario = new TextBox();
+            txtBuscar = new TextBox();
             label1 = new Label();
             panel2 = new Panel();
             panel6 = new Panel();
@@ -71,7 +71,7 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(txtUsuario);
+            panel1.Controls.Add(txtBuscar);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -79,18 +79,19 @@
             panel1.Size = new Size(1350, 125);
             panel1.TabIndex = 0;
             // 
-            // txtUsuario
+            // txtBuscar
             // 
-            txtUsuario.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            txtUsuario.BackColor = Color.FromArgb(247, 247, 245);
-            txtUsuario.BorderStyle = BorderStyle.FixedSingle;
-            txtUsuario.Font = new Font("Calibri", 9F);
-            txtUsuario.Location = new Point(1052, 41);
-            txtUsuario.Multiline = true;
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.PlaceholderText = "Buscar tarea...";
-            txtUsuario.Size = new Size(267, 43);
-            txtUsuario.TabIndex = 2;
+            txtBuscar.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            txtBuscar.BackColor = Color.FromArgb(247, 247, 245);
+            txtBuscar.BorderStyle = BorderStyle.FixedSingle;
+            txtBuscar.Font = new Font("Calibri", 9F);
+            txtBuscar.Location = new Point(1052, 41);
+            txtBuscar.Multiline = true;
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar tarea...";
+            txtBuscar.Size = new Size(267, 43);
+            txtBuscar.TabIndex = 2;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // label1
             // 
@@ -405,7 +406,7 @@
 
         private Panel panel1;
         private Label label1;
-        private TextBox txtUsuario;
+        private TextBox txtBuscar;
         private Panel panel2;
         private Panel panel3;
         private Panel panel6;

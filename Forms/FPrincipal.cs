@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TaskNotes_MonitoreoTareas.Modelos;
 using TaskNotes_MonitoreoTareas.Sub_Forms;
 
 namespace TaskNotes_MonitoreoTareas.Forms
@@ -30,9 +31,11 @@ namespace TaskNotes_MonitoreoTareas.Forms
 
         private void FPrincipal_Load(object sender, EventArgs e)
         {
+            string rol = DatosApp.UsuarioActual?.Rol ?? "Empleado";
+
             screens.Add("Dashboard", new FDashboard() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
             screens.Add("Usuarios", new FUsuarios() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
-            screens.Add("Tareas", new FTareas() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
+            screens.Add("Tareas", new FTareas(rol) { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
             screens.Add("Notificaciones", new FNotificaciones() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
             screens.Add("Ajustes", new FAjustes() { Dock = DockStyle.Fill, TopLevel = false, TopMost = true });
 
@@ -102,6 +105,12 @@ namespace TaskNotes_MonitoreoTareas.Forms
                 lbl.MouseEnter += MenuItem_MouseEnter;
                 lbl.MouseLeave += MenuItem_MouseLeave;
                 lbl.Click += MenuItem_Click;
+            }
+
+            // Ocultar opciones según rol
+            if (DatosApp.UsuarioActual?.Rol != "Admin")
+            {
+                lblUsuarios.Visible = false;
             }
 
             MenuItem_Click(lblDashboard, EventArgs.Empty);
