@@ -183,11 +183,11 @@
             txtPassword.Location = new Point(37, 150);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.PlaceholderText = "contraseña...";
             txtPassword.Size = new Size(618, 42);
             txtPassword.TabIndex = 2;
-            txtPassword.UseSystemPasswordChar = true;
+            txtPassword.Enter += txtPassword_Enter;
             txtPassword.KeyDown += txtPassword_KeyDown;
+            txtPassword.Leave += txtPassword_Leave;
             // 
             // txtUsuario
             // 
@@ -296,6 +296,7 @@
             Name = "FLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FLogin";
+            Load += FLogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

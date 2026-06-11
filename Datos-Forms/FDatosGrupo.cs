@@ -22,16 +22,6 @@ namespace TaskNotes_MonitoreoTareas.Datos_Forms
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConfirmar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConfirmar_Click_1(object sender, EventArgs e)
         {
             string nombre = txtNombre.Text.Trim();

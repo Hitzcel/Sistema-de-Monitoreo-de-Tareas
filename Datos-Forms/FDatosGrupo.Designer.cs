@@ -139,9 +139,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(189, 209);
             label2.Name = "label2";
-            label2.Size = new Size(183, 18);
+            label2.Size = new Size(174, 18);
             label2.TabIndex = 15;
-            label2.Text = "Elegir miembros del equipo:";
+            label2.Text = "Elija miembros del equipo:";
             // 
             // FDatosGrupo
             // 

@@ -125,5 +125,35 @@ namespace TaskNotes_MonitoreoTareas.Forms
             principal.ShowDialog();
             this.Close();
         }
+
+        private void FLogin_Load(object sender, EventArgs e)
+        {
+            SetPlaceholderPassword();
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                SetPlaceholderPassword();
+            }
+        }
+
+        private void SetPlaceholderPassword()
+        {
+            txtPassword.UseSystemPasswordChar = false;
+            txtPassword.Text = "Contraseña...";
+            txtPassword.Font = new Font(txtPassword.Font.FontFamily, 9, FontStyle.Regular);
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Contraseña...")
+            {
+                txtPassword.Text = "";
+                txtPassword.Font = new Font(txtPassword.Font.FontFamily, 9, FontStyle.Regular);
+                txtPassword.UseSystemPasswordChar = true;
+            }
+        }
     }
 }

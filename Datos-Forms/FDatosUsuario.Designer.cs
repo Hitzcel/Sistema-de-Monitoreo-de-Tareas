@@ -153,9 +153,9 @@
             label2.ForeColor = Color.White;
             label2.Location = new Point(189, 209);
             label2.Name = "label2";
-            label2.Size = new Size(183, 18);
+            label2.Size = new Size(172, 18);
             label2.TabIndex = 15;
-            label2.Text = "Ingrese el segundo apellido:";
+            label2.Text = "Ingrese el primer apellido:";
             // 
             // label4
             // 

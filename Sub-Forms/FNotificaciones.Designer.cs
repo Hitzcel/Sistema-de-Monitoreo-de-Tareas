@@ -95,6 +95,7 @@
             // 
             // flowHoy
             // 
+            flowHoy.AutoScroll = true;
             flowHoy.Location = new Point(34, 64);
             flowHoy.Name = "flowHoy";
             flowHoy.Size = new Size(1227, 141);
@@ -122,6 +123,7 @@
             // 
             // flowEstaSemana
             // 
+            flowEstaSemana.AutoScroll = true;
             flowEstaSemana.Location = new Point(34, 67);
             flowEstaSemana.Name = "flowEstaSemana";
             flowEstaSemana.Size = new Size(1227, 141);
@@ -149,6 +151,7 @@
             // 
             // flowAnteriores
             // 
+            flowAnteriores.AutoScroll = true;
             flowAnteriores.Location = new Point(34, 65);
             flowAnteriores.Name = "flowAnteriores";
             flowAnteriores.Size = new Size(1227, 141);

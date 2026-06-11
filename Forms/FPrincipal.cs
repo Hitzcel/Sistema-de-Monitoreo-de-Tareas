@@ -68,6 +68,13 @@ namespace TaskNotes_MonitoreoTareas.Forms
             else if (clicked == lblTareas) loadPanel("Tareas");
             else if (clicked == lblNotificaciones) loadPanel("Notificaciones");
             else if (clicked == lblAjustes) loadPanel("Ajustes");
+
+            try
+            {
+                System.Media.SoundPlayer player = new System.Media.SoundPlayer("tak.wav");
+                player.Play();
+            }
+            catch { }
         }
 
         private void MenuItem_MouseEnter(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TaskNotes_MonitoreoTareas.Clases;
 using TaskNotes_MonitoreoTareas.Datos_Forms;
 using TaskNotes_MonitoreoTareas.Modelos;
 
@@ -23,6 +24,8 @@ namespace TaskNotes_MonitoreoTareas.Sub_Forms
             ConfigurarColumnasDGVGrupos();
             CargarUsuarios();
             CargarGrupos();
+            ClsEstilosUI.EstiloDataGridView(dgvUsuario);
+            ClsEstilosUI.EstiloDataGridView(dgvGrupo);
         }
 
         private void CargarUsuarios()
