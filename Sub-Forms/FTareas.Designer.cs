@@ -173,6 +173,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.ForeColor = SystemColors.ButtonHighlight;
             flowLayoutPanel1.Location = new Point(34, 278);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
